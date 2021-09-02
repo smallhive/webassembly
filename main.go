@@ -59,6 +59,7 @@ func summer(src <-chan int, dst chan<- int) {
 	for v := range src {
 		i += v
 		dst <- i
+		js.Global().Call("aaaa", js.ValueOf(i))
 	}
 }
 
